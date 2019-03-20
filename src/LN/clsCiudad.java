@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 import Comun.ItfProperty;
 
-/*
+/**
  * Creamos los atributos
  */
 public class clsCiudad implements ItfProperty{
 	private String identificador;
 	private String nombre;
 	
-	/*
+	/**
 	 * Creamos el constructor
 	 */
 	public clsCiudad(String identificador, String nombre) {
@@ -19,7 +19,7 @@ public class clsCiudad implements ItfProperty{
 		this.identificador = identificador;
 		this.nombre = nombre;
 		
-		/*
+		/**
 		 * Creamos los metodos
 		 */
 	}

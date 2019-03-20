@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Comun.ItfProperty;
 
 public class clsGestorLN {
-	/*
+	/**
 	 * Creamos los ArrayList de las respectivas
 	 * clases padres
 	 */
@@ -22,14 +22,14 @@ public class clsGestorLN {
 	
 	public void anadirProducto(String identificador, String tipo, String marca) {
 		
-		/*
+		/**
 		 * Declaraci�n de la variable
 		 */
 		
 		clsProducto producto;
 		
 		
-		/*
+		/**
 		 * Definici�n --> crear el hueco en memoria. NEW.
 		 */
 		
@@ -42,7 +42,7 @@ public class clsGestorLN {
 	
 public ArrayList<ItfProperty> esenarProducto() {
 		
-		/*
+		/**
 		 * Declaraci�n de la variable
 		 */
 		
@@ -59,14 +59,14 @@ public ArrayList<ItfProperty> esenarProducto() {
 
 public void anadirPersona(String identificador, String nombre, String apellido) {
 	
-	/*
+	/**
 	 * Declaraci�n de la variable
 	 */
 	
 	clsPersona persona;
 	
 	
-	/*
+	/**
 	 * Definici�n --> crear el hueco en memoria. NEW.
 	 */
 	
@@ -80,7 +80,7 @@ public void anadirPersona(String identificador, String nombre, String apellido) 
 
 public ArrayList<ItfProperty> esenarPersona() {
 	
-	/*
+	/**
 	 * Declaraci�n de la variable
 	 */
 	ArrayList<ItfProperty> retorno;

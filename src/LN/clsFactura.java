@@ -3,14 +3,14 @@ package LN;
 import java.time.LocalDate;
 
 import Comun.ItfProperty;
-/*
+/**
  * Creamos los atributos
  */
 public class clsFactura implements ItfProperty{
 	private String identificador;
 	private LocalDate fecha;
 	
-	/*
+	/**
 	 * Creamos el constructor
 	 */
 	public clsFactura(String identificador, LocalDate fecha) {
@@ -18,7 +18,7 @@ public class clsFactura implements ItfProperty{
 		this.identificador = identificador;
 		this.fecha = fecha;
 		
-		/*
+		/**
 		 * Creamos los metodos
 		 */
 	}

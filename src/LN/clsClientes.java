@@ -4,20 +4,20 @@ import java.time.LocalDate;
 
 import Comun.ItfProperty;
 
-/*
+/**
  * Creamos los atributos
  */
 public class clsClientes extends clsPersona implements ItfProperty{
 	private String correo;
 
-	/*
+	/**
 	 * Creamos el constructor
 	 */
 	public clsClientes(String identificador, String nombre, String apellido, String correo) {
 		super(identificador, nombre, apellido);
 		this.correo = correo;
 		
-		/*
+		/**
 		 * Creamos los metodos
 		 */
 	}

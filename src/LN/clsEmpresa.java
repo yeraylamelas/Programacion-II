@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import Comun.ItfProperty;
 
-/*
+/**
  * Creamos los atributos
  */
 public class clsEmpresa implements ItfProperty{
@@ -12,7 +12,7 @@ public class clsEmpresa implements ItfProperty{
 	private String nombre;
 	private String ciudad;
 	
-	/*
+	/**
 	 * Creamos el constructor
 	 */
 	public clsEmpresa(String identificador, String nombre, String ciudad) {
@@ -21,7 +21,7 @@ public class clsEmpresa implements ItfProperty{
 		this.nombre = nombre;
 		this.ciudad = ciudad;
 		
-		/*
+		/**
 		 * Creamos los metodos
 		 */
 	}
