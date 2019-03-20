@@ -3,7 +3,7 @@ import java.time.LocalDate;
 
 import Comun.ItfProperty;
 
-/*
+/**
  * Creamos los atributos
  */
 public class clsPersona implements ItfProperty{
@@ -11,7 +11,7 @@ public class clsPersona implements ItfProperty{
 	private String nombre;
 	private String apellido;
 	
-	/*
+	/**
 	 * Creamos el constructor
 	 */
 	public clsPersona(String identificador, String nombre, String apellido) {

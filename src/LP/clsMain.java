@@ -14,8 +14,11 @@ public class clsMain {
 		clsGestorLN objgestor;
 
 		objgestor = new clsGestorLN();
+<<<<<<< HEAD
 		
 		
+=======
+>>>>>>> master
 		
 		
 		char c;
@@ -77,7 +80,7 @@ public class clsMain {
         } while (c != 'f');
     }			
 
-	/*
+	/**
 	 * Creamos la clase para crear los productos
 	 */
 private static void CrearProducto ( clsGestorLN objgestor) {
@@ -96,7 +99,7 @@ private static void CrearProducto ( clsGestorLN objgestor) {
 		
 	}
 
-/*
+/**
  * Creamos la clase para poder ver los productos creados anteriormente
  */
 private static void MostrarProducto ( clsGestorLN objgestor) {
@@ -113,7 +116,7 @@ private static void MostrarProducto ( clsGestorLN objgestor) {
 	}
 	
 }
-/*
+/**
  * Creamos la clase para crear las personas
  */
 private static void CrearPersona ( clsGestorLN objgestor) {
@@ -132,7 +135,7 @@ private static void CrearPersona ( clsGestorLN objgestor) {
 		
 	}
 
-/*
+/**
  * Creamos la clase para poder ver las personas creadas anteriormente
  */
 private static void MostrarPersona ( clsGestorLN objgestor) {
