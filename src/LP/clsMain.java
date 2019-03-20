@@ -14,7 +14,7 @@ public class clsMain {
 		clsGestorLN objgestor;
 
 		objgestor = new clsGestorLN();
-		
+		int x;
 		
 		
 		
