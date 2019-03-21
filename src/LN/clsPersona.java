@@ -1,16 +1,16 @@
 package LN;
-import java.time.LocalDate;
 
-import Comun.ItfProperty;
+import COMUN.ItfProperty;
+import COMUN.clsConstantes;
 
 /**
  * Creamos los atributos
  */
-public class clsPersona implements ItfProperty{
+public class clsPersona implements ItfProperty {
 	private String identificador;
 	private String nombre;
 	private String apellido;
-	
+
 	/**
 	 * Creamos el constructor
 	 */
@@ -19,85 +19,41 @@ public class clsPersona implements ItfProperty{
 		this.identificador = identificador;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		
+
 		/**
 		 * Creamos los metodos
 		 */
 	}
-	
-
-	public String getIdentificador() {
-		return identificador;
-	}
-
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
 
 	@Override
-	public String getStringProperty(String propiedad) {
+	public Object getProperty(String propiedad) {
 		// TODO Auto-generated method stub
-		switch(propiedad) {
-		case "id": return this.getIdentificador();
-		case "nombre": return this.getNombre();
-		case "apellido": return this.getApellido();
-		default: return null;
+
+		switch (propiedad) {
+		case clsConstantes.clsPERSONA_IDENTIFICADOR:
+			return identificador;
+		case clsConstantes.clsPERSONA_NOMBRE:
+			return nombre;
+		case clsConstantes.clsPERSONA_APELLIDO:
+			return apellido;
+		default:
+			return null;
 		}
 	}
 
-
 	@Override
-	public Integer getIntegerProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
+	public void setObjectProperty(String propiedad, Object valor) {
+
+		switch (propiedad) {
+		case clsConstantes.clsPERSONA_IDENTIFICADOR:
+			identificador = (String) valor;
+			break;
+		case clsConstantes.clsPERSONA_NOMBRE:
+			nombre = (String) valor;
+			break;
+		case clsConstantes.clsPERSONA_APELLIDO:
+			apellido = (String) valor;
+			break;
+		}
 	}
-
-
-	@Override
-	public Float getFloatProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Double getDoubleProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public char getCharProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public LocalDate getLocalDateProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-
 }
-

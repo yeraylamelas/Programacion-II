@@ -2,14 +2,16 @@ package LN;
 
 import java.time.LocalDate;
 
-import Comun.ItfProperty;
+import COMUN.ItfProperty;
+import COMUN.clsConstantes;
+
 /**
  * Creamos los atributos
  */
-public class clsFactura implements ItfProperty{
+public class clsFactura implements ItfProperty {
 	private String identificador;
 	private LocalDate fecha;
-	
+
 	/**
 	 * Creamos el constructor
 	 */
@@ -17,79 +19,38 @@ public class clsFactura implements ItfProperty{
 		super();
 		this.identificador = identificador;
 		this.fecha = fecha;
-		
+
 		/**
 		 * Creamos los metodos
 		 */
 	}
 
-
-	public String getIdentificador() {
-		return identificador;
-	}
-
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
-	}
-
-	public LocalDate getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
-	}
-
-
 	@Override
-	public String getStringProperty(String propiedad) {
+	public Object getProperty(String propiedad) {
 		// TODO Auto-generated method stub
-		switch(propiedad) {
-		case "identificador": return this.getIdentificador();
-		default: return null;
+
+		switch (propiedad) {
+		case clsConstantes.clsFACTURA_IDENTIFICADOR:
+			return identificador;
+		case clsConstantes.clsFACTURA_FECHA:
+			return fecha;
+
+		default:
+			return null;
 		}
 	}
 
-
 	@Override
-	public Integer getIntegerProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void setObjectProperty(String propiedad, Object valor) {
 
-
-	@Override
-	public Float getFloatProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Double getDoubleProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public char getCharProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public LocalDate getLocalDateProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		switch(propiedad) {
-		case "fecha": return fecha;
-		default: return null;
+		switch (propiedad) {
+		case clsConstantes.clsFACTURA_IDENTIFICADOR:
+			identificador = (String) valor;
+			break;
+		case clsConstantes.clsFACTURA_FECHA:
+			fecha = (LocalDate) valor;
+			break;
 		}
 	}
-	
-	
-	
-	
 
 }

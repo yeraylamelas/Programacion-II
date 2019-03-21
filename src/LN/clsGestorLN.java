@@ -2,7 +2,7 @@ package LN;
 
 import java.util.ArrayList;
 
-import Comun.ItfProperty;
+import COMUN.ItfProperty;
 
 public class clsGestorLN {
 	/**
