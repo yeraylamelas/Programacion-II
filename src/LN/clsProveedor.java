@@ -1,8 +1,8 @@
 package LN;
 
-import Comun.ItfProperty;
+import COMUN.ItfProperty;
 
-public class clsProveedor extends clsEmpresa implements ItfProperty{
+public class clsProveedor extends clsEmpresa implements ItfProperty {
 
 	/**
 	 * Creamos el constructor
@@ -11,7 +11,5 @@ public class clsProveedor extends clsEmpresa implements ItfProperty{
 		super(identificador, nombre, ciudad);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }

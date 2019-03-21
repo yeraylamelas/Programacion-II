@@ -1,17 +1,16 @@
 package LN;
 
-import java.time.LocalDate;
-
-import Comun.ItfProperty;
+import COMUN.ItfProperty;
+import COMUN.clsConstantes;
 
 /**
  * Creamos los atributos
  */
-public class clsEmpresa implements ItfProperty{
+public class clsEmpresa implements ItfProperty {
 	private String identificador;
 	private String nombre;
 	private String ciudad;
-	
+
 	/**
 	 * Creamos el constructor
 	 */
@@ -20,78 +19,42 @@ public class clsEmpresa implements ItfProperty{
 		this.identificador = identificador;
 		this.nombre = nombre;
 		this.ciudad = ciudad;
-		
+
 		/**
 		 * Creamos los metodos
 		 */
 	}
 
-	public String getIdentificador() {
-		return identificador;
-	}
-
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getCiudad() {
-		return ciudad;
-	}
-
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
-	}
-
 	@Override
-	public String getStringProperty(String propiedad) {
+	public Object getProperty(String propiedad) {
 		// TODO Auto-generated method stub
-		switch(propiedad) {
-		case "identificador": return this.getIdentificador();
-		case "nombre": return this.getNombre();
-		case "ciudad": return this.getCiudad();
-		default: return null;
+
+		switch (propiedad) {
+		case clsConstantes.clsEMPRESA_IDENTIFICADOR:
+			return identificador;
+		case clsConstantes.clsEMPRESA_NOMBRE:
+			return nombre;
+		case clsConstantes.clsEMPRESA_CIUDAD:
+			return ciudad;
+		default:
+			return null;
 		}
-	
 	}
 
 	@Override
-	public Integer getIntegerProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void setObjectProperty(String propiedad, Object valor) {
 
-	@Override
-	public Float getFloatProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
+		switch (propiedad) {
+		case clsConstantes.clsEMPRESA_IDENTIFICADOR:
+			identificador = (String) valor;
+			break;
+		case clsConstantes.clsEMPRESA_NOMBRE:
+			nombre = (String) valor;
+			break;
+		case clsConstantes.clsEMPRESA_CIUDAD:
+			ciudad = (String) valor;
+			break;
+		}
 	}
-
-	@Override
-	public Double getDoubleProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public char getCharProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public LocalDate getLocalDateProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 
 }

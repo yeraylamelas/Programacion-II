@@ -1,16 +1,15 @@
 package LN;
 
-import java.time.LocalDate;
 
-import Comun.ItfProperty;
+import COMUN.clsConstantes;
 
 /**
  * Creamos los atributos
  */
-public class clsCiudad implements ItfProperty{
+public class clsCiudad implements COMUN.ItfProperty {
 	private String identificador;
 	private String nombre;
-	
+
 	/**
 	 * Creamos el constructor
 	 */
@@ -18,76 +17,37 @@ public class clsCiudad implements ItfProperty{
 		super();
 		this.identificador = identificador;
 		this.nombre = nombre;
-		
+
 		/**
 		 * Creamos los metodos
 		 */
 	}
 
-
-	public String getIdentificador() {
-		return identificador;
-	}
-
-	public void setIdentificador(String identificador) {
-		this.identificador = identificador;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
 	@Override
-	public String getStringProperty(String propiedad) {
+	public Object getProperty(String propiedad) {
 		// TODO Auto-generated method stub
-		switch(propiedad) {
-		case "identificador": return this.getIdentificador();
-		case "nombre": return this.getNombre();
-		default: return null;
+
+		switch (propiedad) {
+		case clsConstantes.clsCIUDAD_IDENTIFICADOR:
+			return identificador;
+		case clsConstantes.clsCIUDAD_NOMBRE:
+			return nombre;
+		default:
+			return null;
 		}
 	}
 
-
 	@Override
-	public Integer getIntegerProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
+	public void setObjectProperty(String propiedad, Object valor) {
+
+		switch (propiedad) {
+		case clsConstantes.clsCIUDAD_IDENTIFICADOR:
+			identificador = (String) valor;
+			break;
+		case clsConstantes.clsCIUDAD_NOMBRE:
+			nombre = (String) valor;
+			break;
+		}
 	}
-
-
-	@Override
-	public Float getFloatProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Double getDoubleProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public char getCharProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public LocalDate getLocalDateProperty(String propiedad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 
 }
-
