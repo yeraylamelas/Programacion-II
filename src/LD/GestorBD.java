@@ -39,7 +39,7 @@ public class GestorBD {
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } 
         catch (ClassNotFoundException e) {
  
@@ -47,7 +47,7 @@ public class GestorBD {
         }
          
         //useSSL = true para que la conexion sea cifrada
-        String sURL = "jdbc:mysql://localhost:3306/ui1_artupa?useSSL=true";
+        String sURL = "jdbc:mysql://localhost:3306/mybd?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
          
         connection = java.sql.DriverManager.getConnection( sURL , "root", "root");
                  
