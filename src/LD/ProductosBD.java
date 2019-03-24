@@ -5,15 +5,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import LN.clsPersona;
+import LN.clsProducto;
 
  
-public class PersonasBD 
+public class ProductosBD 
 {	
 	
-  public static List<clsPersona> cargarListaCoches()
+  public static List<clsProducto> cargarListaCoches()
   {
-    ArrayList<clsPersona> vectorBD = new ArrayList<>();
+    ArrayList<clsProducto> vectorBD = new ArrayList<>();
     
     try
     {
@@ -25,16 +25,16 @@ public class PersonasBD
       Statement stmt = GestorBD.getInstance().createStatement();
        
       //hay una tabla coches en la BD
-      ResultSet rs = stmt.executeQuery("SELECT * FROM Persona");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM Producto");
        
       // Tratamos los resultado obtenidos en la consulta SQL
       while(rs.next())
       {
     	  
-        clsPersona nuevaPersona = new clsPersona(  	rs.getString("identificador"),
-                                        rs.getString("nombre"),
-                                        rs.getString("apellido"));                                        
-        vectorBD.add(nuevaPersona);
+        clsProducto nuevoProducto = new clsProducto(  	rs.getString("identificador"),
+                                        rs.getString("marca"),
+                                        rs.getString("tipo"));                                        
+        vectorBD.add(nuevoProducto);
       }  
        
     }
@@ -49,7 +49,7 @@ public class PersonasBD
    
   
   
-  public static clsPersona buscarPersona(String identificador ) 
+  public static clsProducto buscarPersona(String identificador ) 
   {
 	try {
 		GestorBD.getInstance().connect();
@@ -57,12 +57,12 @@ public class PersonasBD
 		Statement sentencia = GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
 				ResultSet.CONCUR_UPDATABLE);
 
-		ResultSet rs = sentencia.executeQuery("SELECT * FROM Persona where identificador = '" + identificador + "'");
+		ResultSet rs = sentencia.executeQuery("SELECT * FROM Producto where identificador = '" + identificador + "'");
 
-		String nombre = rs.getString("nombre");
-		String apellido = rs.getString("apellido");
+		String marca = rs.getString("marca");
+		String tipo = rs.getString("tipo");
 
-		clsPersona c = new clsPersona(identificador, nombre, apellido);
+		clsProducto c = new clsProducto(identificador, marca, tipo);
 
 		return c;
 	} catch (SQLException se) {
@@ -72,7 +72,7 @@ public class PersonasBD
 	} 
   }  
   
-  public static boolean existePersona(String identificador )
+  public static boolean existeProducto(String identificador )
   {
     try
     {
@@ -83,9 +83,9 @@ public class PersonasBD
       GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
                                            ResultSet.CONCUR_UPDATABLE);
             
-      ResultSet rs = sentencia.executeQuery("SELECT * FROM Persona where identificador = '" + identificador +"'" );
+      ResultSet rs = sentencia.executeQuery("SELECT * FROM Producto where identificador = '" + identificador +"'" );
        
-      System.out.println("SELECT * FROM Persona where identificador = '" + identificador +"'");
+      System.out.println("SELECT * FROM Producto where identificador = '" + identificador +"'");
       
       if ( rs.first() == false )
       {
@@ -105,7 +105,7 @@ public class PersonasBD
     }    
   }
  
-  public static void insertarPersona( String identificador , String nombre, String apellido )
+  public static void insertarProducto( String identificador , String marca, String tipo )
   {     
     try
     {
@@ -114,18 +114,18 @@ public class PersonasBD
       Statement sentencia =  GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
                                            ResultSet.CONCUR_UPDATABLE);
  
-      boolean r = existePersona( identificador );
+      boolean r = existeProducto( identificador );
        
       if(r == false)
       {         
-    	 String query ="insert into Persona values('"+ identificador + "'" +
-                ",'"+ nombre +"',"+ apellido +")";
+    	 String query ="insert into Producto values('"+ identificador + "'" +
+                ",'"+ marca +"',"+ tipo +")";
              
          sentencia.executeUpdate(query);
       }
       else
       {
-          System.out.println("Persona Existente!");
+          System.out.println("Producto Existente!");
       }
        
       GestorBD.getInstance().disconnect();
