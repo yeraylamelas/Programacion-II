@@ -51,6 +51,7 @@ public class clsMain {
 				break;
 
 			case 'b':
+				System.out.println("PRODUCTOS:");
 
 				MostrarProducto(objgestor);
 
@@ -63,6 +64,7 @@ public class clsMain {
 				break;
 
 			case 'd':
+				System.out.println("PERSONAS:");
 
 				MostrarPersona(objgestor);
 
