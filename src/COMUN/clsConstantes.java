@@ -18,9 +18,6 @@ public class clsConstantes {
 	public static final String clsEMPRESA_NOMBRE = "nombre";
 	public static final String clsEMPRESA_CIUDAD = "ciudad";
 
-	public static final String clsCIUDAD_IDENTIFICADOR = "identificador";
-	public static final String clsCIUDAD_NOMBRE = "nombre";
-
 	public static final String clsCLIENTES_IDENTIFICADOR = "identificador";
 	public static final String clsCLIENTES_NOMBRE = "nombre";
 	public static final String clsCLIENTES_APELLIDO = "apellido";

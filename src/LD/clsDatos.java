@@ -7,36 +7,36 @@ import java.util.ArrayList;
 import COMUN.clsConstantes.enFicDatos;
 import COMUN.itfDatos;
 
-public class clsDatos implements itfDatos{
+public class clsDatos implements itfDatos {
 
 	@Override
 	public void ComenzarSave(enFicDatos fichero) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void TerminarSave() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void Save(Serializable o) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void ComenzarRead(enFicDatos fichero) throws IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void TerminarRead() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class clsDatos implements itfDatos{
 	@Override
 	public void ResetFile(enFicDatos fichero) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
