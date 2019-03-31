@@ -24,7 +24,7 @@ public class clsClientes extends clsPersona implements ItfProperty {
 	public Object getProperty(String propiedad) {
 		// TODO Auto-generated method stub
 		switch (propiedad) {
-			case clsConstantes.clsCLIENTES_CORREO:
+			case clsConstantes.CLIENTES_CORREO:
 			return correo;
 		default:
 			return null;
@@ -35,7 +35,7 @@ public class clsClientes extends clsPersona implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.clsCLIENTES_CORREO:
+		case clsConstantes.CLIENTES_CORREO:
 			correo = (String) valor;
 			break;
 		
