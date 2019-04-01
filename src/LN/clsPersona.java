@@ -67,11 +67,11 @@ public class clsPersona implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.clsPERSONA_IDENTIFICADOR:
+		case clsConstantes.PERSONA_IDENTIFICADOR:
 			return identificador;
-		case clsConstantes.clsPERSONA_NOMBRE:
+		case clsConstantes.PERSONA_NOMBRE:
 			return nombre;
-		case clsConstantes.clsPERSONA_APELLIDO:
+		case clsConstantes.PERSONA_APELLIDO:
 			return apellido;
 		default:
 			return null;
@@ -82,13 +82,13 @@ public class clsPersona implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.clsPERSONA_IDENTIFICADOR:
+		case clsConstantes.PERSONA_IDENTIFICADOR:
 			identificador = (String) valor;
 			break;
-		case clsConstantes.clsPERSONA_NOMBRE:
+		case clsConstantes.PERSONA_NOMBRE:
 			nombre = (String) valor;
 			break;
-		case clsConstantes.clsPERSONA_APELLIDO:
+		case clsConstantes.PERSONA_APELLIDO:
 			apellido = (String) valor;
 			break;
 		}

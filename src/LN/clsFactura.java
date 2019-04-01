@@ -30,9 +30,9 @@ public class clsFactura implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.clsFACTURA_IDENTIFICADOR:
+		case clsConstantes.FACTURA_IDENTIFICADOR:
 			return identificador;
-		case clsConstantes.clsFACTURA_FECHA:
+		case clsConstantes.FACTURA_FECHA:
 			return fecha;
 
 		default:
@@ -44,10 +44,10 @@ public class clsFactura implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.clsFACTURA_IDENTIFICADOR:
+		case clsConstantes.FACTURA_IDENTIFICADOR:
 			identificador = (String) valor;
 			break;
-		case clsConstantes.clsFACTURA_FECHA:
+		case clsConstantes.FACTURA_FECHA:
 			fecha = (LocalDate) valor;
 			break;
 		}

@@ -6,37 +6,37 @@ public class clsConstantes {
 
 	}
 
-	public static final String clsFACTURA_IDENTIFICADOR = "identificador";
-	public static final String clsFACTURA_FECHA = "fecha";
+	public static final String FACTURA_IDENTIFICADOR = "identificador";
+	public static final String FACTURA_FECHA = "fecha";
 
-	public static final String clsEMPLEADO_IDENTIFICADOR = "identificador";
-	public static final String clsEMPLEADO_NOMBRE = "nombre";
-	public static final String clsEMPLEADO_APELLIDO = "apellido";
-	public static final String clsEMPLEADO_PUESTO = "puesto";
+	public static final String EMPLEADO_IDENTIFICADOR = "identificador";
+	public static final String EMPLEADO_NOMBRE = "nombre";
+	public static final String EMPLEADO_APELLIDO = "apellido";
+	public static final String EMPLEADO_PUESTO = "puesto";
 
-	public static final String clsEMPRESA_IDENTIFICADOR = "identificador";
-	public static final String clsEMPRESA_NOMBRE = "nombre";
-	public static final String clsEMPRESA_CIUDAD = "ciudad";
+	public static final String EMPRESA_IDENTIFICADOR = "identificador";
+	public static final String EMPRESA_NOMBRE = "nombre";
+	public static final String EMPRESA_CIUDAD = "ciudad";
 
-	public static final String clsCLIENTES_IDENTIFICADOR = "identificador";
-	public static final String clsCLIENTES_NOMBRE = "nombre";
-	public static final String clsCLIENTES_APELLIDO = "apellido";
-	public static final String clsCLIENTES_CORREO = "correo";
+	public static final String CLIENTES_IDENTIFICADOR = "identificador";
+	public static final String CLIENTES_NOMBRE = "nombre";
+	public static final String CLIENTES_APELLIDO = "apellido";
+	public static final String CLIENTES_CORREO = "correo";
 
-	public static final String clsPERSONA_IDENTIFICADOR = "identificador";
-	public static final String clsPERSONA_NOMBRE = "nombre";
-	public static final String clsPERSONA_APELLIDO = "apellido";
+	public static final String PERSONA_IDENTIFICADOR = "identificador";
+	public static final String PERSONA_NOMBRE = "nombre";
+	public static final String PERSONA_APELLIDO = "apellido";
 
-	public static final String clsPRODUCTO_IDENTIFICADOR = "identificador";
-	public static final String clsPRODUCTO_TIPO = "tipo";
-	public static final String clsPRODUCTO_MARCA = "marca";
+	public static final String PRODUCTO_IDENTIFICADOR = "identificador";
+	public static final String PRODUCTO_TIPO = "tipo";
+	public static final String PRODUCTO_MARCA = "marca";
 
-	public static final String clsPROVEEDOR_IDENTIFICADOR = "identificador";
-	public static final String clsPROVEEDOR_NOMBRE = "nombre";
-	public static final String clsPROVEEDOR_CIUDAD = "ciudad";
+	public static final String PROVEEDOR_IDENTIFICADOR = "identificador";
+	public static final String PROVEEDOR_NOMBRE = "nombre";
+	public static final String PROVEEDOR_CIUDAD = "ciudad";
 
-	public static final String clsSUCURSAL_IDENTIFICADOR = "identificador";
-	public static final String clsSUCURSAL_NOMBRE = "nombre";
-	public static final String clsSUCURSAL_CIUDAD = "ciudad";
+	public static final String SUCURSAL_IDENTIFICADOR = "identificador";
+	public static final String SUCURSAL_NOMBRE = "nombre";
+	public static final String UCURSAL_CIUDAD = "ciudad";
 
 }

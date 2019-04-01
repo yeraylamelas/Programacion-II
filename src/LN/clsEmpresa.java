@@ -30,11 +30,11 @@ public class clsEmpresa implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.clsEMPRESA_IDENTIFICADOR:
+		case clsConstantes.EMPRESA_IDENTIFICADOR:
 			return identificador;
-		case clsConstantes.clsEMPRESA_NOMBRE:
+		case clsConstantes.EMPRESA_NOMBRE:
 			return nombre;
-		case clsConstantes.clsEMPRESA_CIUDAD:
+		case clsConstantes.EMPRESA_CIUDAD:
 			return ciudad;
 		default:
 			return null;
@@ -45,13 +45,13 @@ public class clsEmpresa implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.clsEMPRESA_IDENTIFICADOR:
+		case clsConstantes.EMPRESA_IDENTIFICADOR:
 			identificador = (String) valor;
 			break;
-		case clsConstantes.clsEMPRESA_NOMBRE:
+		case clsConstantes.EMPRESA_NOMBRE:
 			nombre = (String) valor;
 			break;
-		case clsConstantes.clsEMPRESA_CIUDAD:
+		case clsConstantes.EMPRESA_CIUDAD:
 			ciudad = (String) valor;
 			break;
 		}
