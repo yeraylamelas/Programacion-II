@@ -3,7 +3,7 @@ package LN;
 import java.time.LocalDate;
 
 import COMUN.ItfProperty;
-import COMUN.clsConstantes;
+import COMUN.Constantes;
 
 /**
  * Creamos los atributos
@@ -30,9 +30,9 @@ public class clsFactura implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.FACTURA_IDENTIFICADOR:
+		case Constantes.FACTURA_IDENTIFICADOR:
 			return identificador;
-		case clsConstantes.FACTURA_FECHA:
+		case Constantes.FACTURA_FECHA:
 			return fecha;
 
 		default:
@@ -44,10 +44,10 @@ public class clsFactura implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.FACTURA_IDENTIFICADOR:
+		case Constantes.FACTURA_IDENTIFICADOR:
 			identificador = (String) valor;
 			break;
-		case clsConstantes.FACTURA_FECHA:
+		case Constantes.FACTURA_FECHA:
 			fecha = (LocalDate) valor;
 			break;
 		}

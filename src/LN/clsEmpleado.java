@@ -1,7 +1,7 @@
 package LN;
 
 import COMUN.ItfProperty;
-import COMUN.clsConstantes;
+import COMUN.Constantes;
 
 /**
  * Creamos los atributos
@@ -26,7 +26,7 @@ public class clsEmpleado extends clsPersona implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.EMPLEADO_PUESTO:
+		case Constantes.EMPLEADO_PUESTO:
 			return puesto;
 		default:
 			return null;
@@ -37,7 +37,7 @@ public class clsEmpleado extends clsPersona implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.EMPLEADO_PUESTO:
+		case Constantes.EMPLEADO_PUESTO:
 			puesto = (String) valor;
 			break;
 		}
