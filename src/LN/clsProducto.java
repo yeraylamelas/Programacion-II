@@ -1,7 +1,7 @@
 package LN;
 
 import COMUN.ItfProperty;
-import COMUN.clsConstantes;
+import COMUN.Constantes;
 
 /**
  * Creamos los atributos
@@ -29,11 +29,11 @@ public class clsProducto implements ItfProperty {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
-		case clsConstantes.PRODUCTO_IDENTIFICADOR:
+		case Constantes.PRODUCTO_IDENTIFICADOR:
 			return identificador;
-		case clsConstantes.PRODUCTO_TIPO:
+		case Constantes.PRODUCTO_TIPO:
 			return tipo;
-		case clsConstantes.PRODUCTO_MARCA:
+		case Constantes.PRODUCTO_MARCA:
 			return marca;
 		default:
 			return null;
@@ -44,13 +44,13 @@ public class clsProducto implements ItfProperty {
 	public void setObjectProperty(String propiedad, Object valor) {
 
 		switch (propiedad) {
-		case clsConstantes.PRODUCTO_IDENTIFICADOR:
+		case Constantes.PRODUCTO_IDENTIFICADOR:
 			identificador = (String) valor;
 			break;
-		case clsConstantes.PRODUCTO_TIPO:
+		case Constantes.PRODUCTO_TIPO:
 			tipo = (String) valor;
 			break;
-		case clsConstantes.PRODUCTO_MARCA:
+		case Constantes.PRODUCTO_MARCA:
 			marca = (String) valor;
 			break;
 		}

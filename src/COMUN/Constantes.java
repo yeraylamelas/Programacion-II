@@ -1,6 +1,6 @@
 package COMUN;
 
-public class clsConstantes {
+public class Constantes {
 
 	public enum enFicDatos {
 
