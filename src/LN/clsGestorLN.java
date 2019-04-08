@@ -92,4 +92,14 @@ public ArrayList<ItfProperty> esenarPersona() {
 	return retorno;
 
 }
+
+
+public void guardarDatos () {
+	
+	for(clsProducto a:listaproductos) {
+		
+		
+		
+	}
+}
 }

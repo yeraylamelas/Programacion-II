@@ -6,8 +6,6 @@ import java.sql.Statement;
  
 public class GestorBD {
      
-    private static GestorBD instance = null;
- 
     private Connection connection = null;
  
     private void checkConnected()
@@ -17,24 +15,11 @@ public class GestorBD {
                                     "La conexion a la BD no ha sido creada todavia.");
     }
  
-    private GestorBD()
+    public GestorBD()
     {
     }
  
-    public static GestorBD getInstance()
-    {
-        if (instance == null)
-        {
-                instance = new GestorBD();
-        }
-        return instance;
-    }
- 
-    public static void releaseInstance()
-    {
-        instance = null;
-    }
- 
+    
     public void connect() throws SQLException
     {
         try
@@ -47,7 +32,7 @@ public class GestorBD {
         }
          
         //useSSL = true para que la conexion sea cifrada
-        String sURL = "jdbc:mysql://localhost:3306/mybd?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+        String sURL = "jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
          
         connection = java.sql.DriverManager.getConnection( sURL , "root", "root");
                  

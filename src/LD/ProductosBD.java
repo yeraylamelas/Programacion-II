@@ -11,7 +11,10 @@ import LN.clsProducto;
 public class ProductosBD 
 {	
 	
-  public static List<clsProducto> cargarListaCoches()
+	private GestorBD gestorBD = new GestorBD();
+	
+	
+  public List<clsProducto> cargarListaCoches()
   {
     ArrayList<clsProducto> vectorBD = new ArrayList<>();
     
@@ -19,10 +22,10 @@ public class ProductosBD
     {
       // Todos los accesos a bases de datos deben ir entre try/catch
       // Establecemos una conexi�n con nuestra base de datos
-      GestorBD.getInstance().connect();
+      gestorBD.connect();
          
       // Creamos y ejecutamos una sentencia SQL
-      Statement stmt = GestorBD.getInstance().createStatement();
+      Statement stmt = gestorBD.createStatement();
        
       //hay una tabla coches en la BD
       ResultSet rs = stmt.executeQuery("SELECT * FROM Producto");
@@ -49,12 +52,12 @@ public class ProductosBD
    
   
   
-  public static clsProducto buscarPersona(String identificador ) 
+  public clsProducto buscarPersona(String identificador ) 
   {
 	try {
-		GestorBD.getInstance().connect();
+		gestorBD.connect();
 
-		Statement sentencia = GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+		Statement sentencia = gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
 				ResultSet.CONCUR_UPDATABLE);
 
 		ResultSet rs = sentencia.executeQuery("SELECT * FROM Producto where identificador = '" + identificador + "'");
@@ -72,15 +75,15 @@ public class ProductosBD
 	} 
   }  
   
-  public static boolean existeProducto(String identificador )
+  public boolean existeProducto(String identificador )
   {
     try
     {
-       GestorBD.getInstance().connect();
+       gestorBD.connect();
          
       // Creamos y ejecutamos una sentencia SQL
       Statement sentencia = 
-      GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
+      gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
                                            ResultSet.CONCUR_UPDATABLE);
             
       ResultSet rs = sentencia.executeQuery("SELECT * FROM Producto where identificador = '" + identificador +"'" );
@@ -105,13 +108,13 @@ public class ProductosBD
     }    
   }
  
-  public static void insertarProducto( String identificador , String marca, String tipo )
+  public void insertarProducto( String identificador , String marca, String tipo )
   {     
     try
     {
-      GestorBD.getInstance().connect();
+      gestorBD.connect();
        
-      Statement sentencia =  GestorBD.getInstance().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
+      Statement sentencia =  gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,             
                                            ResultSet.CONCUR_UPDATABLE);
  
       boolean r = existeProducto( identificador );
@@ -128,7 +131,7 @@ public class ProductosBD
           System.out.println("Producto Existente!");
       }
        
-      GestorBD.getInstance().disconnect();
+      gestorBD.disconnect();
      
     }
     catch(SQLException se)
@@ -136,5 +139,4 @@ public class ProductosBD
         se.printStackTrace();
     }
  }
-
 }

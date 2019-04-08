@@ -8,11 +8,10 @@ import LN.clsGestorLN;
 public class clsMain {
 
 	// comentario de linea
-
 	/*
+	 * 
 	 * comentario multilinea puedo seguir aquí
 	 */
-
 	/**
 	 * 
 	 * @param args
@@ -23,17 +22,7 @@ public class clsMain {
 		clsGestorLN objgestor;
 
 		objgestor = new clsGestorLN();
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-		
-=======
->>>>>>> master
-		
-		
-=======
 
->>>>>>> master
 		char c;
 
 		do {
