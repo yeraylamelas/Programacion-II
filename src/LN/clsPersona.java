@@ -63,7 +63,7 @@ public class clsPersona implements ItfProperty {
 	}
 
 	@Override
-	public Object getProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -75,22 +75,6 @@ public class clsPersona implements ItfProperty {
 			return apellido;
 		default:
 			return null;
-		}
-	}
-
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.PERSONA_IDENTIFICADOR:
-			identificador = (String) valor;
-			break;
-		case Constantes.PERSONA_NOMBRE:
-			nombre = (String) valor;
-			break;
-		case Constantes.PERSONA_APELLIDO:
-			apellido = (String) valor;
-			break;
 		}
 	}
 }

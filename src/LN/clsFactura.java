@@ -26,7 +26,7 @@ public class clsFactura implements ItfProperty {
 	}
 
 	@Override
-	public Object getProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -40,17 +40,5 @@ public class clsFactura implements ItfProperty {
 		}
 	}
 
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.FACTURA_IDENTIFICADOR:
-			identificador = (String) valor;
-			break;
-		case Constantes.FACTURA_FECHA:
-			fecha = (LocalDate) valor;
-			break;
-		}
-	}
 
 }

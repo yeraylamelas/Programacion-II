@@ -3,17 +3,20 @@ package LN;
 import java.util.ArrayList;
 
 import COMUN.ItfProperty;
+import LD.GestorBD;
+import LD.ProductosBD;
 
 public class clsGestorLN {
 	/**
 	 * Creamos los ArrayList de las respectivas
 	 * clases padres
 	 */
+	private ProductosBD productosBD = new ProductosBD();
 	private ArrayList<clsProducto> listaproductos;
 	private ArrayList<clsPersona> listapersonas;
-	
+	private GestorBD objDatos;
 	public clsGestorLN() {
-		
+		objDatos=new GestorBD();
 		listaproductos = new ArrayList<clsProducto>();
 		listapersonas = new ArrayList<clsPersona>();
 		
@@ -37,6 +40,10 @@ public class clsGestorLN {
 		
 		
 		listaproductos.add(producto);
+		
+		//grabar en la base de datos.
+		
+		productosBD.insertarProducto(identificador, tipo, marca);
 		
 	}
 	
@@ -99,7 +106,12 @@ public void guardarDatos () {
 	for(clsProducto a:listaproductos) {
 		
 		
+		String identificador = (String) a.getObjectProperty(COMUN.Constantes.PRODUCTO_IDENTIFICADOR);
+		
 		
 	}
+}
+public void cargarDatos() {
+	
 }
 }

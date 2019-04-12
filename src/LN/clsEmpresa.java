@@ -26,7 +26,7 @@ public class clsEmpresa implements ItfProperty {
 	}
 
 	@Override
-	public Object getProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -41,20 +41,5 @@ public class clsEmpresa implements ItfProperty {
 		}
 	}
 
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.EMPRESA_IDENTIFICADOR:
-			identificador = (String) valor;
-			break;
-		case Constantes.EMPRESA_NOMBRE:
-			nombre = (String) valor;
-			break;
-		case Constantes.EMPRESA_CIUDAD:
-			ciudad = (String) valor;
-			break;
-		}
-	}
 
 }

@@ -6,7 +6,7 @@ import COMUN.Constantes;
 /**
  * Creamos los atributos
  */
-public class clsClientes extends clsPersona implements ItfProperty {
+public class clsClientes extends clsPersona implements ItfProperty, Comparable<clsClientes> {
 	private String correo;
 
 	/**
@@ -20,25 +20,28 @@ public class clsClientes extends clsPersona implements ItfProperty {
 		 * Creamos los metodos
 		 */
 	}
+	
+	
 	@Override
-	public Object getProperty(String propiedad) {
+	public int compareTo(clsClientes o ) {
+		
+
+		String id1 = (String) super.getObjectProperty(Constantes.CLIENTES_IDENTIFICADOR);
+		String id2 = (String) o.getObjectProperty(Constantes.CLIENTES_IDENTIFICADOR);
+		
+		return id1.compareTo(id2);
+	
+	}
+	
+	
+	@Override
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 		switch (propiedad) {
 			case Constantes.CLIENTES_CORREO:
 			return correo;
 		default:
 			return null;
-		}
-	}
-
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.CLIENTES_CORREO:
-			correo = (String) valor;
-			break;
-		
 		}
 	}
 }

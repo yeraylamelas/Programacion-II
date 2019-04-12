@@ -13,8 +13,7 @@ public interface ItfProperty
 	 * Devuelve la propiedad solicitada por nombre de tipo String.
 	 * @para propiedad nombre de la propiedad a devolver del objeto. 
 	 */
-	Object	getProperty	(String propiedad);
+	Object	getObjectProperty	(String propiedad);
 	
-	void setObjectProperty( String propiedad , Object valor );
 
 }

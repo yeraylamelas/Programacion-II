@@ -22,7 +22,7 @@ public class clsEmpleado extends clsPersona implements ItfProperty {
 	 * Creamos los metodos
 	 */
 	@Override
-	public Object getProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -30,16 +30,6 @@ public class clsEmpleado extends clsPersona implements ItfProperty {
 			return puesto;
 		default:
 			return null;
-		}
-	}
-
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.EMPLEADO_PUESTO:
-			puesto = (String) valor;
-			break;
 		}
 	}
 

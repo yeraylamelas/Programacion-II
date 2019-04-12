@@ -5,56 +5,87 @@ import java.sql.SQLException;
 import java.sql.Statement;
  
 public class GestorBD {
+	
+	private Connection conexion = null;
+	private Statement sentencia;
      
-    private Connection connection = null;
- 
-    private void checkConnected()
+public void conectar () {
+		
+		try
+		{
+			//Class.forName("com.mysql.jdbc.Driver");
+			
+			// useSSL = true para que la conexion sea cifrada
+			String sURL = "jdbc:mysql://localhost:3306/mydb?useSSL=true&serverTimezone=GMT";
+		
+			conexion = java.sql.DriverManager.getConnection(sURL, "root", "Glorioso1921");
+		}
+		catch( Exception e )
+		{
+			e.printStackTrace();
+		}
+			
+			
+	}
+	
+	
+	public void desconectar () {
+		
+		try {
+			comprobarConexion();
+			conexion.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	public void comprobarConexion () {
+		
+		if (conexion == null)
+			throw new IllegalStateException("La conexion a la BD no ha sido creada todavia.");
+		
+		
+	}
+	
+	
+	public void insertar (String sql) {
+		
+		try {
+			conectar();
+			
+			sentencia = conexion.createStatement();
+			
+			sentencia.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				sentencia.close();
+				conexion.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	public Statement createStatement() throws SQLException
     {
-            if (connection == null)
-                    throw new IllegalStateException(
-                                    "La conexion a la BD no ha sido creada todavia.");
-    }
- 
-    public GestorBD()
-    {
-    }
- 
-    
-    public void connect() throws SQLException
-    {
-        try
-        {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } 
-        catch (ClassNotFoundException e) {
- 
-            e.printStackTrace();
-        }
-         
-        //useSSL = true para que la conexion sea cifrada
-        String sURL = "jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
-         
-        connection = java.sql.DriverManager.getConnection( sURL , "root", "root");
-                 
-        //System.out.println("Conectado.");
-    }
- 
-    public void disconnect() throws SQLException
-    {
-        checkConnected();
-        connection.close();
-        //System.out.println("Desconectado.");
-    }
- 
-    public Statement createStatement() throws SQLException
-    {
-        checkConnected();
-        return connection.createStatement();
+        comprobarConexion();
+        return conexion.createStatement();
     }   
      
     public Statement createStatement(int resultSetType , int resultSetConcurrency ) throws SQLException
     {
-        checkConnected();
-        return connection.createStatement(resultSetType, resultSetConcurrency );
-    }   
+    	comprobarConexion();
+        return conexion.createStatement(resultSetType, resultSetConcurrency );
+    }   	
+   
+	
+	
 }

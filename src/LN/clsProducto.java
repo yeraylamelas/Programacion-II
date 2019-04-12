@@ -25,7 +25,7 @@ public class clsProducto implements ItfProperty {
 	}
 
 	@Override
-	public Object getProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad) {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -40,21 +40,6 @@ public class clsProducto implements ItfProperty {
 		}
 	}
 
-	@Override
-	public void setObjectProperty(String propiedad, Object valor) {
-
-		switch (propiedad) {
-		case Constantes.PRODUCTO_IDENTIFICADOR:
-			identificador = (String) valor;
-			break;
-		case Constantes.PRODUCTO_TIPO:
-			tipo = (String) valor;
-			break;
-		case Constantes.PRODUCTO_MARCA:
-			marca = (String) valor;
-			break;
-		}
-	}
 
 	@Override
 	public int hashCode() {

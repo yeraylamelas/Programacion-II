@@ -11,30 +11,28 @@ public class PersonasBD {
 	private GestorBD gestorBD = new GestorBD();
 
 	public ResultSet cargarListaPersonas() {
-	
+
 		ResultSet rs;
-		
+
 		try {
 			// Todos los accesos a bases de datos deben ir entre try/catch
 			// Establecemos una conexi�n con nuestra base de datos
-			gestorBD.connect();
+			gestorBD.conectar();
 
 			// Creamos y ejecutamos una sentencia SQL
 			Statement stmt = gestorBD.createStatement();
 
-			// hay una tabla coches en la BD
-			 rs = stmt.executeQuery("SELECT * FROM Persona");
-			
-			/*
-			// Tratamos los resultado obtenidos en la consulta SQL
-			while (rs.next()) {
+			// hay una tabla persona en la BD
+			rs = stmt.executeQuery("SELECT * FROM clientes");
 
-				clsPersona nuevaPersona = new clsPersona(rs.getString("identificador"), rs.getString("nombre"),
-						rs.getString("apellido"));
-				vectorBD.add(nuevaPersona);
-			}
-			*/
-			 
+			/*
+			 * // Tratamos los resultado obtenidos en la consulta SQL while (rs.next()) {
+			 * 
+			 * clsPersona nuevaPersona = new clsPersona(rs.getString("identificador"),
+			 * rs.getString("nombre"), rs.getString("apellido"));
+			 * vectorBD.add(nuevaPersona); }
+			 */
+
 			return rs;
 
 		} catch (SQLException se) {
@@ -46,39 +44,63 @@ public class PersonasBD {
 	}
 
 	/*
-	public boolean buscarPersona(String identificador) {
+	 * public boolean buscarPersona(String identificador) { try {
+	 * gestorBD.connect();
+	 * 
+	 * Statement sentencia =
+	 * gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+	 * ResultSet.CONCUR_UPDATABLE);
+	 * 
+	 * ResultSet rs = sentencia
+	 * .executeQuery("SELECT * FROM Persona where identificador = '" + identificador
+	 * + "'");
+	 * 
+	 * String nombre = rs.getString("nombre"); String apellido =
+	 * rs.getString("apellido");
+	 * 
+	 * clsPersona c = new clsPersona(identificador, nombre, apellido);
+	 * 
+	 * return c; } catch (SQLException se) { se.printStackTrace();
+	 * 
+	 * return false; } }
+	 */
+
+	public void insertarPersona(String identificador, String nombre, String apellido) {
 		try {
-			gestorBD.connect();
+
+			gestorBD.conectar();
 
 			Statement sentencia = gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-			ResultSet rs = sentencia
-					.executeQuery("SELECT * FROM Persona where identificador = '" + identificador + "'");
+			boolean rs = existePersona(identificador);
 
-			String nombre = rs.getString("nombre");
-			String apellido = rs.getString("apellido");
+			if (rs == false) {
+				String query = "insert into clientes values('" + identificador + "'" + ",'" + nombre + "'," + apellido
+						+ ")";
 
-			clsPersona c = new clsPersona(identificador, nombre, apellido);
+				sentencia.executeUpdate(query);
+			} else {
+				System.out.println("Persona Existente!");
+			}
 
-			return c;
+			gestorBD.desconectar();
+
 		} catch (SQLException se) {
 			se.printStackTrace();
-
-			return false;
 		}
 	}
-*/
+
 	public boolean existePersona(String identificador) {
 		try {
-			gestorBD.connect();
+			gestorBD.conectar();
 
 			// Creamos y ejecutamos una sentencia SQL
 			Statement sentencia = gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
 			ResultSet rs = sentencia
-					.executeQuery("SELECT * FROM Persona where identificador = '" + identificador + "'");
+					.executeQuery("SELECT * FROM clientes where identificador = '" + identificador + "'");
 
-			System.out.println("SELECT * FROM Persona where identificador = '" + identificador + "'");
+			System.out.println("SELECT * FROM clientes where identificador = '" + identificador + "'");
 
 			if (rs.first() == false) {
 				return false;
@@ -91,30 +113,7 @@ public class PersonasBD {
 
 			return false;
 		}
-	}
 
-	public void insertarPersona(String identificador, String nombre, String apellido) {
-		try {
-			gestorBD.connect();
-
-			Statement sentencia = gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-			boolean r = existePersona(identificador);
-
-			if (r == false) {
-				String query = "insert into Persona values('" + identificador + "'" + ",'" + nombre + "'," + apellido
-						+ ")";
-
-				sentencia.executeUpdate(query);
-			} else {
-				System.out.println("Persona Existente!");
-			}
-
-			gestorBD.disconnect();
-
-		} catch (SQLException se) {
-			se.printStackTrace();
-		}
 	}
 
 }

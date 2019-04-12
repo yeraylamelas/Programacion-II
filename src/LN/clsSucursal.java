@@ -10,5 +10,4 @@ public class clsSucursal extends clsEmpresa implements ItfProperty {
 		super(identificador, nombre, ciudad);
 		// TODO Auto-generated constructor stub
 	}
-
 }

@@ -103,9 +103,9 @@ public class clsMain {
 		productos = objgestor.esenarProducto();
 
 		for (ItfProperty p : productos) {
-			System.out.println(p.getProperty("identificador"));
-			System.out.println(p.getProperty("tipo"));
-			System.out.println(p.getProperty("marca"));
+			System.out.println(p.getObjectProperty("identificador"));
+			System.out.println(p.getObjectProperty("tipo"));
+			System.out.println(p.getObjectProperty("marca"));
 		}
 
 	}
@@ -136,9 +136,9 @@ public class clsMain {
 		personas = objgestor.esenarPersona();
 
 		for (ItfProperty p : personas) {
-			System.out.println(p.getProperty("identificador"));
-			System.out.println(p.getProperty("nombre"));
-			System.out.println(p.getProperty("apellido"));
+			System.out.println(p.getObjectProperty("identificador"));
+			System.out.println(p.getObjectProperty("nombre"));
+			System.out.println(p.getObjectProperty("apellido"));
 		}
 
 	}
