@@ -3,9 +3,14 @@ package LP;
 import java.util.ArrayList;
 
 import COMUN.ItfProperty;
+import COMUN.clsExcepciones;
 import LN.clsGestorLN;
+import LN.clsGestorLN.Error1;
+import LN.clsProducto;
 
 public class clsMain {
+	
+	private clsGestorLN clsGestorLN = new clsGestorLN ();
 
 	// comentario de linea
 	/*
@@ -76,6 +81,20 @@ public class clsMain {
 
 		} while (c != 'f');
 	}
+	
+	public static void Excepciones(clsGestorLN objgestor) 
+	{
+		try
+		{
+			objgestor.g1();
+			
+		}
+		catch( Error1 e1 )
+		{
+			System.out.println("Pillado");
+		}
+		
+	}
 
 	/**
 	 * Creamos la clase para crear los productos
@@ -92,6 +111,11 @@ public class clsMain {
 		objgestor.anadirProducto(identificador, tipo, marca);
 
 	}
+	
+	public String buscarProducto( String identificador ) 
+	{		
+		return clsGestorLN.buscarProducto(identificador);		
+	}		
 
 	/**
 	 * Creamos la clase para poder ver los productos creados anteriormente

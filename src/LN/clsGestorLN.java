@@ -2,6 +2,7 @@ package LN;
 
 import java.util.ArrayList;
 
+import COMUN.Constantes;
 import COMUN.ItfProperty;
 import LD.GestorBD;
 import LD.ProductosBD;
@@ -21,6 +22,11 @@ public class clsGestorLN {
 		listapersonas = new ArrayList<clsPersona>();
 		
 	
+	}
+	
+	public void g1() throws Error1
+	{
+		throw new Error1 ("Error de cualquier cosa");
 	}
 	
 	public void anadirProducto(String identificador, String tipo, String marca) {
@@ -47,6 +53,26 @@ public class clsGestorLN {
 		
 	}
 	
+	
+	public  String buscarProducto( String identificador ) throws PropiedadInexistente
+	{
+		//Crear un alumno con los datos que dispones para que la
+		//maquina lo busque entre todos los alumnos de la estructura
+		clsProducto productoQueBuscas = new clsProducto (identificador,null,null);
+		
+		for(clsProducto a : listaproductos ) //for_each
+		{
+			if( a.equals( productoQueBuscas ) ) //equals
+			{
+				return (String) a.getObjectProperty(Constantes.PRODUCTO_IDENTIFICADOR);
+			}
+		}
+		
+		return null;
+		
+	}
+	
+	
 public ArrayList<ItfProperty> esenarProducto() {
 		
 		/**
@@ -62,6 +88,22 @@ public ArrayList<ItfProperty> esenarProducto() {
 	return retorno;
 
 	}
+
+
+
+public class Error1 extends RuntimeException {
+
+	public Error1()
+	{
+		super();
+	}
+	
+	public Error1( String pTexto )
+	{
+		super(pTexto);
+	}
+	
+}
 
 
 public void anadirPersona(String identificador, String nombre, String apellido) {

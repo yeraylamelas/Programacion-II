@@ -25,7 +25,7 @@ public class clsProducto implements ItfProperty {
 	}
 
 	@Override
-	public Object getObjectProperty(String propiedad) {
+	public Object getObjectProperty(String propiedad)throws PropiedadInexistente  {
 		// TODO Auto-generated method stub
 
 		switch (propiedad) {
@@ -35,8 +35,7 @@ public class clsProducto implements ItfProperty {
 			return tipo;
 		case Constantes.PRODUCTO_MARCA:
 			return marca;
-		default:
-			return null;
+		default: throw new PropiedadInexistente("No existe esa propiedad!");
 		}
 	}
 
