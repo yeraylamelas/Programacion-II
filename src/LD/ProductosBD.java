@@ -7,8 +7,42 @@ import java.util.ArrayList;
 import java.util.List;
 
  
-public class ProductosBD 
-{	
+public class ProductosBD {	
+	
+	private GestorBD gbd = new GestorBD();
+	
+	public ResultSet cargarListaProductos() {
+		try {
+			// Todos los accesos a bases de datos deben ir entre try/catch
+			// Establecemos una conexi�n con nuestra base de datos
+	
+			gbd.conectar();
+
+			// Creamos y ejecutamos una sentencia SQL
+			Statement stmt = gbd.createStatement();
+
+			// hay una tabla coches en la BD
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Productos");
+
+			/*
+			 * // Tratamos los resultado obtenidos en la consulta SQL while(rs.next()) {
+			 * 
+			 * Coche nuevoCoche = new Coche( rs.getString("matricula"),
+			 * rs.getString("propietario"), rs.getInt("potencia"));
+			 * vectorBD.add(nuevoCoche); }
+			 */
+
+			//gbd.disconnect();
+
+			return rs;
+
+		} catch (SQLException se) {
+			se.printStackTrace();
+
+			return null;
+		}
+	}
+
 	
 	private GestorBD gestorBD = new GestorBD();
 	

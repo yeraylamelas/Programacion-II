@@ -1,6 +1,7 @@
 package LP;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import COMUN.ItfProperty;
 import COMUN.clsExcepciones;
@@ -120,9 +121,11 @@ public class clsMain {
 	/**
 	 * Creamos la clase para poder ver los productos creados anteriormente
 	 */
+	
+	
 	private static void MostrarProducto(clsGestorLN objgestor) {
 
-		ArrayList<ItfProperty> productos;
+		List<ItfProperty> productos;
 
 		productos = objgestor.esenarProducto();
 
