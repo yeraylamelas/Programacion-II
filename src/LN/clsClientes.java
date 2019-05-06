@@ -6,6 +6,12 @@ import COMUN.Constantes;
 /**
  * Creamos los atributos
  */
+
+
+//yeray payaso
+
+
+
 public class clsClientes extends clsPersona implements ItfProperty, Comparable<clsClientes> {
 	private String correo;
 
