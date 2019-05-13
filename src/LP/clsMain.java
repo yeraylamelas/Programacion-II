@@ -11,7 +11,7 @@ import LN.clsProducto;
 
 public class clsMain {
 	
-	private clsGestorLN clsGestorLN = new clsGestorLN ();
+	//private clsGestorLN clsGestorLN = new clsGestorLN ();
 
 	// comentario de linea
 	/*
@@ -24,13 +24,16 @@ public class clsMain {
 	 */
 
 	public static void main(String[] args) {
+		
 
 		clsGestorLN objgestor;
 
 		objgestor = new clsGestorLN();
+		clsAplicacion v =new clsAplicacion(objgestor);
+		v.setVisible(true);
 
-		char c;
-
+		//char c;
+/*
 		do {
 			System.out.println("MEN�\n" + "----\n" + "a) Crear producto\n" + "b) Mostrar productos\n"
 					+ "c) Crear persona\n" + "d) Mostrar personas\n" + "\n" + "Introduzca una opci�n:");
@@ -80,7 +83,7 @@ public class clsMain {
 
 			}
 
-		} while (c != 'f');
+		} while (c != 'f');*/
 	}
 	
 	public static void Excepciones(clsGestorLN objgestor) 
@@ -100,7 +103,9 @@ public class clsMain {
 	/**
 	 * Creamos la clase para crear los productos
 	 */
-	private static void CrearProducto(clsGestorLN objgestor) {
+	
+	
+	/*private static void CrearProducto(clsGestorLN objgestor) {
 
 		System.out.println("identificador");
 		String identificador = UtilidadesLP.leerCadena();
@@ -116,14 +121,14 @@ public class clsMain {
 	public String buscarProducto( String identificador ) 
 	{		
 		return clsGestorLN.buscarProducto(identificador);		
-	}		
+	}*/		
 
 	/**
 	 * Creamos la clase para poder ver los productos creados anteriormente
 	 */
 	
 	
-	private static void MostrarProducto(clsGestorLN objgestor) {
+	/*private static void MostrarProducto(clsGestorLN objgestor) {
 
 		List<ItfProperty> productos;
 
@@ -135,12 +140,13 @@ public class clsMain {
 			System.out.println(p.getObjectProperty("marca"));
 		}
 
-	}
+	}*/
 
 	/**
 	 * Creamos la clase para crear las personas
 	 */
-	private static void CrearPersona(clsGestorLN objgestor) {
+	
+	/*private static void CrearPersona(clsGestorLN objgestor) {
 
 		System.out.println("identificador");
 		String identificador = UtilidadesLP.leerCadena();
@@ -151,12 +157,13 @@ public class clsMain {
 
 		objgestor.anadirPersona(identificador, nombre, apellido);
 
-	}
+	}*/
 
 	/**
 	 * Creamos la clase para poder ver las personas creadas anteriormente
 	 */
-	private static void MostrarPersona(clsGestorLN objgestor) {
+	
+	/*private static void MostrarPersona(clsGestorLN objgestor) {
 
 		ArrayList<ItfProperty> personas;
 
@@ -168,5 +175,5 @@ public class clsMain {
 			System.out.println(p.getObjectProperty("apellido"));
 		}
 
-	}
+	}*/
 }

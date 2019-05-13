@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonasBD {
+public class ClientesBD {
 
 	private GestorBD gestorBD = new GestorBD();
 
@@ -65,32 +65,45 @@ public class PersonasBD {
 	 * return false; } }
 	 */
 
-	public void insertarPersona(String identificador, String nombre, String apellido) {
-		try {
+	public void insertarCliente(String identificador, String nombre, String apellido, String correo) {
+		
+		
+gestorBD.conectar();
+		
+		String sql = "insert into clientes values('" + identificador + "','" + nombre + "','" + apellido + "','" + correo + "')";
+				
+		System.out.println(sql );
+		
+		gestorBD.insertar( sql );
+		
+		gestorBD.desconectar();
+		
+		
+		/*try {
 
 			gestorBD.conectar();
 
 			Statement sentencia = gestorBD.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-			boolean rs = existePersona(identificador);
+			boolean rs = existeCliente(identificador);
 
 			if (rs == false) {
-				String query = "insert into clientes values('" + identificador + "'" + ",'" + nombre + "'," + apellido
-						+ ")";
+				String query = "insert into clientes values('" + identificador + "'" + ",'" + nombre + ",'" + apellido
+						+ ",'" + correo + ")";
 
 				sentencia.executeUpdate(query);
 			} else {
-				System.out.println("Persona Existente!");
+				System.out.println("Cliente Existente!");
 			}
 
 			gestorBD.desconectar();
 
 		} catch (SQLException se) {
 			se.printStackTrace();
-		}
+		}*/
 	}
 
-	public boolean existePersona(String identificador) {
+	/*public boolean existeCliente(String identificador) {
 		try {
 			gestorBD.conectar();
 
@@ -114,6 +127,6 @@ public class PersonasBD {
 			return false;
 		}
 
-	}
+	}*/
 
 }

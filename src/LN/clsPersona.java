@@ -7,6 +7,43 @@ import COMUN.Constantes;
  * Creamos los atributos
  */
 public class clsPersona implements ItfProperty {
+	
+	private String identificador;
+	private String nombre;
+	private String apellido;
+
+	/**
+	 * Creamos el constructor
+	 */
+	public clsPersona(String identificador, String nombre, String apellido) {
+		super();
+		this.identificador = identificador;
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
+
+	/**
+	 * Creamos los metodos
+	 */
+
+
+	@Override
+	public Object getObjectProperty(String propiedad) {
+	// TODO Auto-generated method stub
+
+		switch (propiedad) {
+		case Constantes.PERSONA_IDENTIFICADOR:
+			return identificador;
+		case Constantes.PERSONA_NOMBRE:
+			return nombre;
+		case Constantes.PERSONA_APELLIDO:
+			return apellido;
+		default:
+			return null;
+	}
+}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,37 +81,4 @@ public class clsPersona implements ItfProperty {
 		return true;
 	}
 
-	private String identificador;
-	private String nombre;
-	private String apellido;
-
-	/**
-	 * Creamos el constructor
-	 */
-	public clsPersona(String identificador, String nombre, String apellido) {
-		super();
-		this.identificador = identificador;
-		this.nombre = nombre;
-		this.apellido = apellido;
-
-		/**
-		 * Creamos los metodos
-		 */
-	}
-
-	@Override
-	public Object getObjectProperty(String propiedad) {
-		// TODO Auto-generated method stub
-
-		switch (propiedad) {
-		case Constantes.PERSONA_IDENTIFICADOR:
-			return identificador;
-		case Constantes.PERSONA_NOMBRE:
-			return nombre;
-		case Constantes.PERSONA_APELLIDO:
-			return apellido;
-		default:
-			return null;
-		}
-	}
 }

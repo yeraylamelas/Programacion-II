@@ -14,11 +14,13 @@ public class clsProducto implements ItfProperty {
 	/**
 	 * Creamos el constructor
 	 */
-	public clsProducto(String identificador, String tipo, String marca) {
+public clsProducto(String identificador, String tipo, String marca) {
 		super();
 		this.identificador = identificador;
 		this.tipo = tipo;
 		this.marca = marca;
+		
+		
 		/**
 		 * Creamos los metodos
 		 */

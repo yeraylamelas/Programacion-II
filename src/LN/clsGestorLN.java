@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import COMUN.Constantes;
 import COMUN.ItfProperty;
+import LD.ClientesBD;
 import LD.GestorBD;
 import LD.ProductosBD;
 
@@ -12,6 +13,8 @@ public class clsGestorLN {
 	 * Creamos los ArrayList de las respectivas
 	 * clases padres
 	 */
+	
+	private ClientesBD clientesBD = new ClientesBD();
 	private ProductosBD productosBD = new ProductosBD();
 	private ArrayList<clsProducto> listaproductos;
 	private ArrayList<clsPersona> listapersonas;
@@ -53,8 +56,33 @@ public class clsGestorLN {
 		
 	}
 	
+	public void anadirCliente(String identificador, String nombre, String apellido, String correo) {
+		
+		/**
+		 * Declaraci�n de la variable
+		 */
+		
+		clsPersona cliente;
+		
+		
+		/**
+		 * Definici�n --> crear el hueco en memoria. NEW.
+		 */
+		
+		cliente = new clsClientes(identificador, nombre, apellido, correo);
+		
+		//persona.setIdentificador(identificador);
+		
+		listapersonas.add(cliente);
+		
+		//grabar en la base de datos.
+		
+		clientesBD.insertarCliente(identificador, nombre, apellido, correo);
+		
+	}
 	
-	public  String buscarProducto( String identificador ) throws PropiedadInexistente
+	
+	/*public  String buscarProducto( String identificador ) throws PropiedadInexistente
 	{
 		//Crear un alumno con los datos que dispones para que la
 		//maquina lo busque entre todos los alumnos de la estructura
@@ -70,16 +98,16 @@ public class clsGestorLN {
 		
 		return null;
 		
-	}
+	}*/
 	
 	
-public ArrayList<ItfProperty> esenarProducto() {
+/*public ArrayList<ItfProperty> esenarProducto() {*/
 		
 		/**
 		 * Declaraci�n de la variable
 		 */
 		
-	ArrayList<ItfProperty> retorno;
+	/*ArrayList<ItfProperty> retorno;
 	retorno = new ArrayList<ItfProperty>();
 	for(clsProducto a:listaproductos) {
 		retorno.add(a);
@@ -87,7 +115,7 @@ public ArrayList<ItfProperty> esenarProducto() {
 	
 	return retorno;
 
-	}
+	}*/
 
 
 
@@ -106,33 +134,14 @@ public class Error1 extends RuntimeException {
 }
 
 
-public void anadirPersona(String identificador, String nombre, String apellido) {
-	
-	/**
-	 * Declaraci�n de la variable
-	 */
-	
-	clsPersona persona;
-	
-	
-	/**
-	 * Definici�n --> crear el hueco en memoria. NEW.
-	 */
-	
-	persona=new clsPersona(identificador, nombre, apellido);
-	
-	//persona.setIdentificador(identificador);
-	
-	listapersonas.add(persona);
-	
-}
 
-public ArrayList<ItfProperty> esenarPersona() {
+
+/*public ArrayList<ItfProperty> esenarPersona() {*/
 	
 	/**
 	 * Declaraci�n de la variable
 	 */
-	ArrayList<ItfProperty> retorno;
+	/*ArrayList<ItfProperty> retorno;
 	retorno = new ArrayList<ItfProperty>();
 	for(clsPersona a:listapersonas) {
 		retorno.add(a);
@@ -140,10 +149,10 @@ public ArrayList<ItfProperty> esenarPersona() {
 	
 	return retorno;
 
-}
+}*/
 
 
-public void guardarDatos () {
+/*public void guardarDatos () {
 	
 	for(clsProducto a:listaproductos) {
 		
@@ -155,5 +164,5 @@ public void guardarDatos () {
 }
 public void cargarDatos() {
 	
-}
+}*/
 }

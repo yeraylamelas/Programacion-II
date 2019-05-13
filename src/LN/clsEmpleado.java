@@ -33,4 +33,29 @@ public class clsEmpleado extends clsPersona implements ItfProperty {
 		}
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((puesto == null) ? 0 : puesto.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		clsEmpleado other = (clsEmpleado) obj;
+		if (puesto == null) {
+			if (other.puesto != null)
+				return false;
+		} else if (!puesto.equals(other.puesto))
+			return false;
+		return true;
+	}
+
 }
