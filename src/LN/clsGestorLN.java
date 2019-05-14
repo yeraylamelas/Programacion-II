@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import COMUN.Constantes;
 import COMUN.ItfProperty;
 import LD.ClientesBD;
+import LD.EmpleadosBD;
 import LD.GestorBD;
 import LD.ProductosBD;
 
@@ -13,7 +14,7 @@ public class clsGestorLN {
 	 * Creamos los ArrayList de las respectivas
 	 * clases padres
 	 */
-	
+	private EmpleadosBD empleadosBD = new EmpleadosBD();
 	private ClientesBD clientesBD = new ClientesBD();
 	private ProductosBD productosBD = new ProductosBD();
 	private ArrayList<clsProducto> listaproductos;
@@ -82,6 +83,32 @@ public class clsGestorLN {
 	}
 	
 	
+public void anadirEmpleado(String identificador, String nombre, String apellido, String puesto) {
+		
+		/**
+		 * Declaraci�n de la variable
+		 */
+		
+		clsPersona empleado;
+		
+		
+		/**
+		 * Definici�n --> crear el hueco en memoria. NEW.
+		 */
+		
+		empleado = new clsEmpleados(identificador, nombre, apellido, puesto);
+		
+		//persona.setIdentificador(identificador);
+		
+		listapersonas.add(empleado);
+		
+		//grabar en la base de datos.
+		
+		empleadosBD.insertarEmpleado(identificador, nombre, apellido, puesto);
+		
+	}
+	
+	
 	/*public  String buscarProducto( String identificador ) throws PropiedadInexistente
 	{
 		//Crear un alumno con los datos que dispones para que la
@@ -101,13 +128,13 @@ public class clsGestorLN {
 	}*/
 	
 	
-/*public ArrayList<ItfProperty> esenarProducto() {*/
+public ArrayList<ItfProperty> esenarProducto() {
 		
-		/**
-		 * Declaraci�n de la variable
-		 */
+	/**
+	 * Declaraci�n de la variable
+	 */
 		
-	/*ArrayList<ItfProperty> retorno;
+	ArrayList<ItfProperty> retorno;
 	retorno = new ArrayList<ItfProperty>();
 	for(clsProducto a:listaproductos) {
 		retorno.add(a);
@@ -115,7 +142,7 @@ public class clsGestorLN {
 	
 	return retorno;
 
-	}*/
+	}
 
 
 

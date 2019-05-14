@@ -29,9 +29,14 @@ public class Constantes {
 	
 	public static final String BOTON_NUEVO_PRODUCTO = "BOTON_NUEVO_PRODUCTO";
 	public static final String BOTON_BORRAR_PRODUCTO = "BOTON_BORRAR_PRODUCTO";
+	public static final String BOTON_ANADIR_PRODUCTO = "BOTON_ANADIR_PRODUCTO";
+	
 	public static final String BOTON_NUEVO_EMPLEADO = "BOTON_NUEVO_EMPLEADO";
 	public static final String BOTON_BORRAR_EMPLEADO = "BOTON_BORRAR_EMPLEADO";
+	public static final String BOTON_ANADIR_EMPLEADO = "BOTON_ANADIR_EMPLEADO";
+	
 	public static final String BOTON_NUEVO_CLIENTE = "BOTON_NUEVO_CLIENTE";
 	public static final String BOTON_BORRAR_CLIENTE = "BOTON_BORRAR_CLIENTE";
+	public static final String BOTON_ANADIR_CLIENTE = "BOTON_ANADIR_CLIENTE";
 
 }

@@ -10,22 +10,10 @@ import LN.clsGestorLN.Error1;
 import LN.clsProducto;
 
 public class clsMain {
-	
-	//private clsGestorLN clsGestorLN = new clsGestorLN ();
 
-	// comentario de linea
-	/*
-	 * 
-	 * comentario multilinea puedo seguir aquí
-	 */
-	/**
-	 * 
-	 * @param args
-	 */
 
 	public static void main(String[] args) {
 		
-
 		clsGestorLN objgestor;
 
 		objgestor = new clsGestorLN();

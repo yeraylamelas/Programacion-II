@@ -10,7 +10,7 @@ public class ClientesBD {
 
 	private GestorBD gestorBD = new GestorBD();
 
-	public ResultSet cargarListaPersonas() {
+	public ResultSet cargarListaClientes() {
 
 		ResultSet rs;
 
@@ -68,7 +68,7 @@ public class ClientesBD {
 	public void insertarCliente(String identificador, String nombre, String apellido, String correo) {
 		
 		
-gestorBD.conectar();
+		gestorBD.conectar();
 		
 		String sql = "insert into clientes values('" + identificador + "','" + nombre + "','" + apellido + "','" + correo + "')";
 				
